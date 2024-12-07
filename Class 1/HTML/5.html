@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form action="submit_form.php" method="post">
+        <!-- Student Name -->
+        <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="student_name" placeholder="Enter your name" required><br><br>
+
+        <!-- Gender Selection -->
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label><br><br>
+
+        <!-- Department Selection -->
+        <label for="department">Department:</label><br>
+        <select id="department" name="department" required>
+            <option value="">--Select Department--</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+        </select><br><br>
+
+        <!-- Hostel Resident -->
+        <input type="checkbox" id="hostel" name="hostel_resident" value="Yes">
+        <label for="hostel">I am a hostel resident</label><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

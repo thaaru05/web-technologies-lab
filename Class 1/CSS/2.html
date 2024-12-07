@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon-like Web Page</title>
+    <style>
+        /* General page styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #131921; /* Amazon dark blue */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: #232F3E; /* Amazon navigation bar color */
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Main content section styles */
+        main {
+            padding: 20px;
+        }
+
+        .search-bar {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .product {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h2 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #232F3E;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My E-Commerce Store</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Deals</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Search Bar -->
+        <input type="text" class="search-bar" placeholder="Search for products, brands and more..." />
+
+        <!-- Products Section -->
+        <div class="product">
+            <img src="pen.jpeg" alt="Pen">
+            <h2>Pen</h2>
+            <p>Price: $1.99</p>
+        </div>
+
+        <div class="product">
+            <img src="er.png" alt="Eraser">
+            <h2>Eraser</h2>
+            <p>Price: $0.99</p>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 My E-Commerce Store. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+</body>
+</html>
