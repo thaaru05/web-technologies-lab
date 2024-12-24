@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage with External CSS</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        #success-text {
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="highlight">This is a highlighted paragraph with rounded corners and margin.</p>
+
+    <span id="success-text">Success!</span>
+
+    <p>Click <a href="#">here</a> to explore more.</p>
+
+    <script>
+        // JavaScript to display an alert when the link is clicked
+        document.querySelector('a').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+            alert('Link clicked!');
+        });
+    </script>
+</body>
+</html>

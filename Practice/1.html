@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Webpage</title>
+    <style>
+        /* ID selector for the heading */
+        #main-heading {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        /* Class selector for the paragraph */
+        .highlight {
+            background-color: green;
+            font-weight: bold;
+            color: white;
+            padding: 5px;
+        }
+
+        /* Type selector for the list items */
+        ul li {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to My Page</h1>
+
+    <p class="highlight">Coding is fun!</p>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <button onclick="showAlert()">Click Me</button>
+
+    <script>
+        // JavaScript function to show an alert
+        function showAlert() {
+            alert('Hello! Thanks for visiting my page.');
+        }
+    </script>
+</body>
+</html>
