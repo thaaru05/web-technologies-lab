@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Creation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Form Creation</h1>
+    <button id="createFormBtn">Create Form</button>
+    <div class="form-container" id="formContainer"></div>
+
+    <script>
+        // Function to create a dynamic form
+        document.getElementById("createFormBtn").addEventListener("click", function() {
+            const formContainer = document.getElementById("formContainer");
+            
+            // Clear the container
+            formContainer.innerHTML = "";
+
+            // Create a form element
+            const form = document.createElement("form");
+            form.setAttribute("id", "dynamicForm");
+
+            // Add an input field for name
+            const nameLabel = document.createElement("label");
+            nameLabel.textContent = "Name: ";
+            const nameInput = document.createElement("input");
+            nameInput.setAttribute("type", "text");
+            nameInput.setAttribute("name", "name");
+            nameInput.setAttribute("placeholder", "Enter your name");
+
+            // Add a line break
+            form.appendChild(nameLabel);
+            form.appendChild(nameInput);
+            form.appendChild(document.createElement("br"));
+
+            // Add an input field for email
+            const emailLabel = document.createElement("label");
+            emailLabel.textContent = "Email: ";
+            const emailInput = document.createElement("input");
+            emailInput.setAttribute("type", "email");
+            emailInput.setAttribute("name", "email");
+            emailInput.setAttribute("placeholder", "Enter your email");
+
+            // Add a line break
+            form.appendChild(emailLabel);
+            form.appendChild(emailInput);
+            form.appendChild(document.createElement("br"));
+
+            // Add a dropdown field
+            const dropdownLabel = document.createElement("label");
+            dropdownLabel.textContent = "Role: ";
+            const dropdown = document.createElement("select");
+            dropdown.setAttribute("name", "role");
+
+            const option1 = document.createElement("option");
+            option1.setAttribute("value", "student");
+            option1.textContent = "Student";
+
+            const option2 = document.createElement("option");
+            option2.setAttribute("value", "teacher");
+            option2.textContent = "Teacher";
+
+            dropdown.appendChild(option1);
+            dropdown.appendChild(option2);
+
+            // Add a line break
+            form.appendChild(dropdownLabel);
+            form.appendChild(dropdown);
+            form.appendChild(document.createElement("br"));
+
+            // Add a submit button
+            const submitButton = document.createElement("button");
+            submitButton.setAttribute("type", "submit");
+            submitButton.textContent = "Submit";
+
+            form.appendChild(submitButton);
+
+            // Append the form to the container
+            formContainer.appendChild(form);
+        });
+    </script>
+</body>
+</html>

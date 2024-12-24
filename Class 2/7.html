@@ -1,0 +1,9 @@
+  <!-- 7. Auto-Fill Field Based on Another Field -->
+  <h2>7. Auto-Fill Field Based on Another Field</h2>
+  <input type="text" id="nameField" placeholder="Enter Name">
+  <input type="text" id="autoFillField" placeholder="Auto-filled based on Name">
+  <script>
+      document.getElementById('nameField').addEventListener('input', function() {
+          document.getElementById('autoFillField').value = `Hello, ${this.value}`;
+      });
+  </script>

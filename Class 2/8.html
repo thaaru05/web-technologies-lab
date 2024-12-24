@@ -1,0 +1,80 @@
+<h2>8. JavaScript Functions Exploration</h2>
+
+<p>Select the function you want to experiment with:</p>
+
+<!-- Buttons for each function -->
+<button onclick="experiment('arrow')">Arrow Functions</button>
+<button onclick="experiment('escape')">escape() and unescape()</button>
+<button onclick="experiment('window')">Window print(), blur(), and focus()</button>
+<button onclick="experiment('replace')">replace() Method</button>
+<button onclick="experiment('map')">Map Methods (get(), entries(), has())</button>
+
+<div id="output"></div>
+
+<script>
+    // Function to display the selected function's output
+    function experiment(choice) {
+        let output = "";
+        let userInput;
+
+        switch (choice) {
+            case 'arrow':
+                userInput = prompt("Enter a message for the arrow function:");
+                const arrowFunctionExample = (message) => `Arrow Function Output: ${message}`;
+                output = arrowFunctionExample(userInput);
+                break;
+
+            case 'escape':
+                userInput = prompt("Enter a message to encode and decode:");
+                const encodedText = escape(userInput);
+                const decodedText = unescape(encodedText);
+                output = `2. escape() and unescape(): Encoded: ${encodedText} | Decoded: ${decodedText}`;
+                break;
+
+            case 'window':
+                output = `
+                    3. Window Functions:
+                    <button onclick="windowPrint()">Print Page</button>
+                    <button onclick="windowBlur()">Blur Window</button>
+                    <button onclick="windowFocus()">Focus Window</button>
+                `;
+                break;
+
+            case 'replace':
+                const originalText = prompt("Enter a string to apply replace on:");
+                const wordToReplace = prompt("Enter the word you want to replace:");
+                const newWord = prompt("Enter the new word to replace with:");
+                const updatedText = originalText.replace(wordToReplace, newWord);
+                output = `4. replace() Method: Original: ${originalText} | Updated: ${updatedText}`;
+                break;
+
+            case 'map':
+                const mapKey = prompt("Enter a key for the map:");
+                const mapValue = prompt("Enter a value for the map key:");
+                const myMap = new Map();
+                myMap.set(mapKey, mapValue);
+                const mapHasKey = myMap.has(mapKey);
+                const mapEntries = Array.from(myMap.entries());
+                output = `5. Map Methods: Has '${mapKey}': ${mapHasKey} | Map Entries: ${JSON.stringify(mapEntries)}`;
+                break;
+
+            default:
+                output = "Select a valid option!";
+        }
+
+        document.getElementById("output").innerHTML = output;
+    }
+
+    // Window functions
+    function windowPrint() {
+        window.print();
+    }
+
+    function windowBlur() {
+        window.blur();
+    }
+
+    function windowFocus() {
+        window.focus();
+    }
+</script>

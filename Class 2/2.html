@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Example</title>
+    <script>
+        function createCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+            alert(`Cookie "${name}" created!`);
+        }
+        function readCookie(name) {
+            const nameEQ = name + "=";
+            const cookies = document.cookie.split("; ");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i];
+                if (cookie.indexOf(nameEQ) === 0) {
+                    return decodeURIComponent(cookie.substring(nameEQ.length));
+                }
+            }
+            return null;
+        }
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            alert(`Cookie "${name}" deleted!`);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const createBtn = document.getElementById("createCookie");
+            const readBtn = document.getElementById("readCookie");
+            const deleteBtn = document.getElementById("deleteCookie");
+
+            createBtn.addEventListener("click", function () {
+                createCookie("user", "John Doe", 7); 
+            });
+
+            readBtn.addEventListener("click", function () {
+                const value = readCookie("user");
+                if (value) {
+                    alert(`Cookie Value: ${value}`);
+                } else {
+                    alert("Cookie not found!");
+                }
+            });
+
+            deleteBtn.addEventListener("click", function () {
+                deleteCookie("user");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JavaScript Cookies Example</h1>
+    <button id="createCookie">Create Cookie</button>
+    <button id="readCookie">Read Cookie</button>
+    <button id="deleteCookie">Delete Cookie</button>
+</body>
+</html>

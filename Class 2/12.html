@@ -1,0 +1,84 @@
+<h2>12. First-Class and Higher-Order Functions</h2>
+
+<!-- Buttons for testing functions -->
+<button onclick="testFirstClassFunction()">Test First-Class Function</button>
+<button onclick="testHigherOrderFunction()">Test Higher-Order Function</button>
+
+<script>
+    // First-Class Function
+    const greet = (name) => `Hello, ${name}!`;
+
+    // Higher-Order Function
+    const multiplyBy = (factor) => (num) => num * factor;
+
+    // Function to clear previous output
+    function clearPreviousOutput() {
+        // Find all paragraphs added for output and remove them
+        const outputElements = document.querySelectorAll('.output');
+        outputElements.forEach(element => element.remove());
+    }
+
+    // Test First-Class Function
+    function testFirstClassFunction() {
+        clearPreviousOutput();  // Clear any previous output
+
+        const name = prompt("Enter your name:");
+        console.log("testFirstClassFunction called");
+
+        if (name) {
+            // Assign the function to the variable 'greet' which is a first-class function
+            const greeting = greet(name);  // The 'greet' function is invoked with 'name' as parameter
+            
+            // Create a new paragraph element for the output
+            const output = document.createElement('p');
+            output.classList.add('output');  // Adding class to identify the output
+            output.innerHTML = `
+                The variable <strong>greet</strong> has the value: <code>${greet.toString()}</code><br>
+                The greeting function was assigned to the variable <strong>greet</strong> to store the value of the greeting message.<br>
+                First-Class Function Output: ${greeting}
+            `;
+            document.body.appendChild(output);
+        } else {
+            // Display a message if no name is entered
+            const output = document.createElement('p');
+            output.classList.add('output');
+            output.textContent = "No name entered!";
+            document.body.appendChild(output);
+        }
+    }
+
+    // Test Higher-Order Function
+    function testHigherOrderFunction() {
+        clearPreviousOutput();  // Clear any previous output
+
+        const number = parseInt(prompt("Enter a number to double:"), 10);
+        console.log("testHigherOrderFunction called");
+
+        if (!isNaN(number)) {
+            // Higher-order function: 'multiplyBy' returns another function which is used here to double the value
+            const double = multiplyBy(2);  // The 'multiplyBy' function is a higher-order function
+            
+            const result = double(number);  // The 'double' function is invoked with 'number' to double it
+            
+            // Create a new paragraph element for the output
+            const output = document.createElement('p');
+            output.classList.add('output');
+            output.innerHTML = `
+                 The function <strong>multiplyBy</strong> is a higher-order function. It takes a factor (e.g., 2), 
+            and returns a function that multiplies a number by this factor.<br>
+            <strong>multiplyBy(2)</strong> returns the function <strong>(num) => num * 2</strong>, 
+            and when called as <strong>double(${number})</strong>, it results in: ${result}.
+            `;
+            document.body.appendChild(output);
+        } else {
+            // Display a message if invalid number is entered
+            const output = document.createElement('p');
+            output.classList.add('output');
+            output.textContent = "Please enter a valid number!";
+            document.body.appendChild(output);
+        }
+    }
+</script>
+
+</body>
+</html>

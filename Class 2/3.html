@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Amount to Coins</title>
+    <script>
+        function amountToCoins(amount, coins) {
+            const result = [];
+            for (let i = 0; i < coins.length; i++) {
+                while (amount >= coins[i]) {
+                    result.push(coins[i]);
+                    amount -= coins[i];
+                }
+            }
+            return result;
+        }
+
+        function convert() {
+            const amount = parseInt(document.getElementById("amount").value, 10);
+            const coinsInput = document.getElementById("coins").value;
+            const coins = coinsInput.split(",").map(Number).sort((a, b) => b - a); 
+
+            if (isNaN(amount) || amount <= 0 || coins.some(isNaN)) {
+                document.getElementById("output").textContent = "Please enter valid inputs.";
+                return;
+            }
+
+            const result = amountToCoins(amount, coins);
+            document.getElementById("output").textContent = `Amount: ${amount}, Coins: [${coins.join(", ")}] -> Output: ${result.join(", ")}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Convert Amount to Coins</h1>
+    <label for="amount">Enter amount:</label>
+    <input type="number" id="amount" placeholder="Enter amount" required>
+    <br><br>
+    <label for="coins">Enter coin denominations (comma-separated):</label>
+    <input type="text" id="coins" placeholder="e.g., 25,10,5,2,1" required>
+    <br><br>
+    <button onclick="convert()">Convert</button>
+    <p id="output"></p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dropdown</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const options = ["Option 1", "Option 2", "Option 3", "Option 4"];
+            const selectDropdown = document.getElementById("dynamicDropdown");
+            options.forEach(option => {
+                const newOption = document.createElement("option");
+                newOption.value = option.toLowerCase().replace(/\s+/g, "-"); 
+                newOption.textContent = option; 
+                selectDropdown.appendChild(newOption);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Dynamic Dropdown Example</h1>
+    <label for="dynamicDropdown">Choose an option:</label>
+    <select id="dynamicDropdown">
+        <option value="" disabled selected>-- Select an option --</option>
+    </select>
+</body>
+</html>

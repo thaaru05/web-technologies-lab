@@ -1,0 +1,14 @@
+    <!-- 9. Regular Expressions (Email Validation) -->
+    <h2>9. Regular Expressions (Email Validation)</h2>
+    <button onclick="validateEmail()">Validate Email</button>
+    <script>
+        function validateEmail() {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const email = prompt("Enter your email:");
+            if (emailPattern.test(email)) {
+                alert("Valid email address.");
+            } else {
+                alert("Invalid email address.");
+            }
+        }
+    </script>

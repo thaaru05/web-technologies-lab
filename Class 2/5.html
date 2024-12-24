@@ -1,0 +1,74 @@
+
+<h2>5. Registration Form</h2>
+    <button onclick="registerUser()">Register</button>
+
+    <!-- Registration details displayed just below the Register button -->
+    <div id="registrationDetails"></div>
+
+    <script>
+        function registerUser() {
+            // Collecting user data using prompt boxes
+
+            // Name
+            const name = prompt("Enter your name:");
+            if (!name) {
+                alert("Name is required!");
+                return;
+            }
+
+            // Address
+            const address = prompt("Enter your address:");
+            if (!address) {
+                alert("Address is required!");
+                return;
+            }
+
+            // Password
+            const password = prompt("Enter your password (at least 6 characters):");
+            if (!password || password.length < 6) {
+                alert("Password must be at least 6 characters long!");
+                return;
+            }
+
+            // Email
+            const email = prompt("Enter your email address:");
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address!");
+                return;
+            }
+
+            // Phone Number
+            const phone = prompt("Enter your phone number (10 digits):");
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number!");
+                return;
+            }
+
+            // Agree to terms (Checkbox)
+            const termsAccepted = confirm("Do you agree to the terms and conditions?");
+            if (!termsAccepted) {
+                alert("You must agree to the terms and conditions to proceed.");
+                return;
+            }
+
+            // Gender (Radio button-like choice using confirm)
+            const genderConfirmation = confirm("Are you male? (Cancel for female)");
+            let gender = "Female";
+            if (genderConfirmation) {
+                gender = "Male";
+            }
+
+            // Display the collected data just below the Register button
+            const registrationDetailsDiv = document.getElementById("registrationDetails");
+            registrationDetailsDiv.innerHTML = `
+                <h3>Registration Successful! Here are your details:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+            `;
+        }
+    </script>
