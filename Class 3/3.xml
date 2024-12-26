@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OTTPlatform [
+    <!ELEMENT OTTPlatform (Users, ContentLibrary)>
+    <!ELEMENT Users (User+)>
+    <!ELEMENT User (Name, Age, Phone, Address, Devices, Profiles, Subscription, Payment)>
+    <!ATTLIST User user_id ID #REQUIRED>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Age (#PCDATA)>
+    <!ELEMENT Phone (#PCDATA)>
+    <!ELEMENT Address (#PCDATA)>
+    <!ELEMENT Devices (Device+)>
+    <!ELEMENT Device (DeviceID, DeviceName)>
+    <!ELEMENT DeviceID (#PCDATA)>
+    <!ELEMENT DeviceName (#PCDATA)>
+    <!ELEMENT Profiles (Profile+)>
+    <!ELEMENT Profile (Watchlist, Downloads, WatchedContent)>
+    <!ATTLIST Profile profile_id ID #REQUIRED>
+    <!ELEMENT Watchlist (Content*)>
+    <!ELEMENT Downloads (Content*)>
+    <!ELEMENT WatchedContent (Content*)>
+    <!ELEMENT Content (ContentName, Genre, Views?, RemainingWatchTime?, IsCompleted?)>
+    <!ATTLIST Content content_id ID #REQUIRED>
+    <!ELEMENT ContentName (#PCDATA)>
+    <!ELEMENT Genre (#PCDATA)>
+    <!ELEMENT Views (#PCDATA)>
+    <!ELEMENT RemainingWatchTime (#PCDATA)>
+    <!ELEMENT IsCompleted (#PCDATA)>
+    <!ELEMENT Subscription (SubscriptionID, SubscriptionType, Amount, StartDate, EndDate)>
+    <!ELEMENT SubscriptionID (#PCDATA)>
+    <!ELEMENT SubscriptionType (#PCDATA)>
+    <!ELEMENT Amount (#PCDATA)>
+    <!ELEMENT StartDate (#PCDATA)>
+    <!ELEMENT EndDate (#PCDATA)>
+    <!ELEMENT Payment (PaymentID, AmountPaid, PaymentDate, PaymentType)>
+    <!ELEMENT PaymentID (#PCDATA)>
+    <!ELEMENT AmountPaid (#PCDATA)>
+    <!ELEMENT PaymentDate (#PCDATA)>
+    <!ELEMENT PaymentType (#PCDATA)>
+    <!ELEMENT ContentLibrary (Content+)>
+    <!ELEMENT Content (ContentName, Genre, Type, Duration?, IMDBRating?, Cast?, Seasons?, Episodes?)>
+    <!ATTLIST Content content_id ID #REQUIRED>
+    <!ELEMENT Type (#PCDATA)>
+    <!ELEMENT Duration (#PCDATA)>
+    <!ELEMENT IMDBRating (#PCDATA)>
+    <!ELEMENT Cast (Actor*)>
+    <!ELEMENT Actor (#PCDATA)>
+    <!ELEMENT Seasons (#PCDATA)>
+    <!ELEMENT Episodes (Episode*)>
+    <!ELEMENT Episode (EpisodeNumber, Title)>
+    <!ELEMENT EpisodeNumber (#PCDATA)>
+    <!ELEMENT Title (#PCDATA)>
+]>
+
+<OTTPlatform>
+    <Users>
+        <User user_id="U001">
+            <Name>John Doe</Name>
+            <Age>30</Age>
+            <Phone>1234567890</Phone>
+            <Address>123 Street, City, Country</Address>
+            <Devices>
+                <Device>
+                    <DeviceID>D001</DeviceID>
+                    <DeviceName>Smart TV</DeviceName>
+                </Device>
+                <Device>
+                    <DeviceID>D002</DeviceID>
+                    <DeviceName>Mobile Phone</DeviceName>
+                </Device>
+            </Devices>
+            <Profiles>
+                <Profile profile_id="P001">
+                    <Watchlist>
+                        <Content content_id="C001">
+                            <ContentName>Movie A</ContentName>
+                            <Genre>Action</Genre>
+                        </Content>
+                    </Watchlist>
+                    <Downloads>
+                        <Content content_id="C002">
+                            <ContentName>Series B</ContentName>
+                            <Genre>Drama</Genre>
+                        </Content>
+                    </Downloads>
+                    <WatchedContent>
+                        <Content content_id="C001">
+                            <ContentName>Movie A</ContentName>
+                            <Genre>Action</Genre>
+                            <Views>3</Views>
+                            <RemainingWatchTime>0</RemainingWatchTime>
+                            <IsCompleted>true</IsCompleted>
+                        </Content>
+                    </WatchedContent>
+                </Profile>
+                <Profile profile_id="P002">
+                    <Watchlist>
+                        <Content content_id="C003">
+                            <ContentName>Reality Show C</ContentName>
+                            <Genre>Reality</Genre>
+                        </Content>
+                    </Watchlist>
+                </Profile>
+            </Profiles>
+            <Subscription>
+                <SubscriptionID>S001</SubscriptionID>
+                <SubscriptionType>Premium</SubscriptionType>
+                <Amount>15.99</Amount>
+                <StartDate>2024-01-01</StartDate>
+                <EndDate>2024-12-31</EndDate>
+            </Subscription>
+            <Payment>
+                <PaymentID>P001</PaymentID>
+                <AmountPaid>15.99</AmountPaid>
+                <PaymentDate>2024-01-01</PaymentDate>
+                <PaymentType>Credit Card</PaymentType>
+            </Payment>
+        </User>
+        <User user_id="U002">
+            <Name>Jane Smith</Name>
+            <Age>25</Age>
+            <Phone>9876543210</Phone>
+            <Address>456 Avenue, City, Country</Address>
+            <Devices>
+                <Device>
+                    <DeviceID>D003</DeviceID>
+                    <DeviceName>PC</DeviceName>
+                </Device>
+            </Devices>
+            <Profiles>
+                <Profile profile_id="P003">
+                    <Watchlist>
+                        <Content content_id="C004">
+                            <ContentName>Series D</ContentName>
+                            <Genre>Thriller</Genre>
+                        </Content>
+                    </Watchlist>
+                </Profile>
+            </Profiles>
+            <Subscription>
+                <SubscriptionID>S002</SubscriptionID>
+                <SubscriptionType>Basic</SubscriptionType>
+                <Amount>9.99</Amount>
+                <StartDate>2024-02-01</StartDate>
+                <EndDate>2024-12-31</EndDate>
+            </Subscription>
+            <Payment>
+                <PaymentID>P002</PaymentID>
+                <AmountPaid>9.99</AmountPaid>
+                <PaymentDate>2024-02-01</PaymentDate>
+                <PaymentType>UPI</PaymentType>
+            </Payment>
+        </User>
+    </Users>
+    <ContentLibrary>
+        <Content content_id="C001">
+            <ContentName>Movie A</ContentName>
+            <Genre>Action</Genre>
+            <Type>Movie</Type>
+            <Duration>120</Duration>
+            <IMDBRating>8.2</IMDBRating>
+            <Cast>
+                <Actor>Actor 1</Actor>
+                <Actor>Actor 2</Actor>
+            </Cast>
+        </Content>
+        <Content content_id="C002">
+            <ContentName>Series B</ContentName>
+            <Genre>Drama</Genre>
+            <Type>Series</Type>
+            <Seasons>3</Seasons>
+            <IMDBRating>9.0</IMDBRating>
+            <Episodes>
+                <Episode>
+                    <EpisodeNumber>1</EpisodeNumber>
+                    <Title>Pilot</Title>
+                </Episode>
+                <Episode>
+                    <EpisodeNumber>2</EpisodeNumber>
+                    <Title>Second Episode</Title>
+                </Episode>
+            </Episodes>
+            <Cast>
+                <Actor>Actor A</Actor>
+                <Actor>Actor B</Actor>
+            </Cast>
+        </Content>
+        <Content content_id="C003">
+            <ContentName>Reality Show C</ContentName>
+            <Genre>Reality</Genre>
+            <Type>Reality Show</Type>
+            <Episodes>
+                <Episode>
+                    <EpisodeNumber>1</EpisodeNumber>
+                    <Title>Introduction</Title>
+                </Episode>
+            </Episodes>
+        </Content>
+        <Content content_id="C004">
+            <ContentName>Series D</ContentName>
+            <Genre>Thriller</Genre>
+            <Type>Series</Type>
+            <Seasons>2</Seasons>
+            <IMDBRating>8.5</IMDBRating>
+            <Episodes>
+                <Episode>
+                    <EpisodeNumber>1</EpisodeNumber>
+                    <Title>First Episode</Title>
+                </Episode>
+                <Episode>
+                    <EpisodeNumber>2</EpisodeNumber>
+                    <Title>Second Episode</Title>
+                </Episode>
+            </Episodes>
+            <Cast>
+                <Actor>Actor X</Actor>
+                <Actor>Actor Y</Actor>
+            </Cast>
+        </Content>
+    </ContentLibrary>
+</OTTPlatform>
