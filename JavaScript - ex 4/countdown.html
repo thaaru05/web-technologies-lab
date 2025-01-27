@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title> Countdown </title>
+    </head>
+    <body>
+        <h1>Countdown</h1>
+        <label for="num"> Enter the Number : </label>
+        <input type="number" id="num">
+        <button onclick="start()">Start</button>
+        <h5 id="result"></h5>
+        <script>
+            function start(){
+                var num = document.getElementById("num").value;
+                var result = document.getElementById("result");
+                for(let i = num; i >= 1; i--)
+            {
+                result.innerHTML += i;
+                console.log(i);
+            
+            }
+            console.log("Time up");
+            result.innerHTML += "Time up";
+            }
+        
+        </script>
+    </body>
+</html>

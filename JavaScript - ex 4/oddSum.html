@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Sum</title>
+</head>
+<body>
+    <h1> Odd Sum </h1>
+    <label for="start">Start : </label>
+    <input type="number" id="start">
+    <br>
+    <br>
+    <br>
+    <label for="end">End : </label>
+    <input type="number" id="end">
+    <br>
+    <br>
+    <br>
+    <button onclick="calculate()">Calculate</button>
+    <h2 id="result"></h2>
+    <script>
+    function calculate() {
+      var start = parseInt(document.getElementById("start").value);
+      var end = parseInt(document.getElementById("end").value);
+      let sum = 0;
+
+      if (start % 2 === 0) start++;
+      for (let i = start; i <= end; i += 2) {
+        sum += i;
+      }
+
+      document.getElementById("result").innerHTML = "Sum: " + sum;
+    }
+    </script>
+</body>
+</html>

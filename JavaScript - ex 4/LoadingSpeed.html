@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Speed</title>
+</head>
+<body>
+    <h1> Loading speed</h1>
+    <script>
+        let progress = 0;
+        while(progress < 100)
+    {
+        let increment  = Math.floor(Math.random() * 11) + 5;
+        if(progress + increment >= 100)
+            increment = 100 - progress;
+        progress += increment;
+        console.log(`Progress : ${progress}`);
+    }
+    console.log("Loading completed !");
+    </script>
+</body>
+</html>

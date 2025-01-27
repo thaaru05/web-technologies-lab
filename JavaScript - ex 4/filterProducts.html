@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title> Filter and Count </title>
+    </head>
+    <body>
+        <h1>Filter and Count</h1>
+        <script>
+            function filterProduct(products)
+            {
+                return products.filter(product => !product.startsWith("S"));
+            }
+            function filterProductCount(products)
+            {
+                return products.filter(product => !product.startsWith("S")).length;
+            }
+            var products = ["Shampoo","Soap","Brush","Sponge","Toothpaste"]
+            console.log(filterProduct(products));
+            console.log(filterProductCount(products));
+        </script>
+    </body>
+</html>
