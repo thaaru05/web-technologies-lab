@@ -1,0 +1,16 @@
+{
+    "students": [
+        {
+            "id": "101",
+            "name": "Alice Johnson",
+            "age": 20,
+            "email": "alice@example.com"
+        },
+        {
+            "id": "102",
+            "name": "Bob Smith",
+            "age": 22,
+            "email": "bob@example.com"
+        }
+    ]
+}
